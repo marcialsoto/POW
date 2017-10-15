@@ -1,0 +1,77 @@
+﻿@model UNFV.Portfolio.Models.Education
+
+@{
+    ViewBag.Title = "Eliminar Formacion Educativa";
+    ViewBag.Message = "Seguro de querer hacer esto?";
+
+}
+
+<div class="section" id="educations">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 page-header">
+                <h4 class="heading">@ViewBag.Title</h4>
+                <p>@ViewBag.Message</p>
+            </div>
+            <div class="col-sm-12 col-md-12">
+                <div>
+                    <h4>Education</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Degree.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Degree.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Enterprise.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Enterprise.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Career)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Career)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Start)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Start)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.End)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.End)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-default" /> |
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

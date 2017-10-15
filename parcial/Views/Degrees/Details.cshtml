@@ -1,0 +1,41 @@
+﻿@model UNFV.Portfolio.Models.Degree
+
+@{
+    ViewBag.Title = "Detalles de Grado";
+    ViewBag.Message = "Viendo el detalle de un grado";
+
+}
+
+<div class="section" id="degrees">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 page-header">
+                <h4 class="heading">@ViewBag.Title</h4>
+                <p>@ViewBag.Message</p>
+            </div>
+            <div class="col-sm-12 col-md-12">
+                <div>
+                    <h4>Degree</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+
+                    </dl>
+                </div>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.DegreeID }) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

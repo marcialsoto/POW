@@ -1,0 +1,90 @@
+﻿@model IEnumerable<UNFV.Portfolio.Models.Education>
+
+@{
+    ViewBag.Title = "Formacion Educativa";
+    ViewBag.Message = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.";
+}
+
+<div class="section" id="educations">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-xs-mobile-fullwidth margin-seven-bottom xs-margin-ten-bottom page-header">
+                <h4 class="heading">@ViewBag.Title <small>@Html.ActionLink("+ Agregar", "Create")</small></h4>
+                <p>@ViewBag.Message</p>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="media col-sm-6 col-md-6 col-xs-12">
+                    <div class="media-left">
+                        @Html.DisplayFor(modelItem => item.EducationID)
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href='@Url.Action("Details", new { id = item.EducationID })'>@Html.DisplayFor(modelItem => item.Enterprise.Name)</a></h4>
+                        <p>@Html.DisplayFor(modelItem => item.Degree.Name) en @Html.DisplayFor(modelItem => item.Career)<br />
+                        @Html.DisplayFor(modelItem => item.Start) - @Html.DisplayFor(modelItem => item.End)
+                        </p>
+                        <p>
+                            <small>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.EducationID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.EducationID })
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+@*<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Degree.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Enterprise.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Career)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Start)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.End)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Degree.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Enterprise.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Career)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Start)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.End)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EducationID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EducationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EducationID })
+        </td>
+    </tr>
+}
+
+</table>*@

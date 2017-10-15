@@ -1,0 +1,86 @@
+﻿@model IEnumerable<UNFV.Portfolio.Models.Enterprise>
+
+@{
+    ViewBag.Title = "Clientes";
+    ViewBag.Message = "Confian en mi";
+
+}
+
+@section Styles {
+    @Styles.Render("~/Content/lightbox_css")
+}
+
+<div class="section" id="enterprises">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 page-header">
+                <h4 class="heading">@ViewBag.Title</h4>
+                <p>@ViewBag.Message</p>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-lg-3 col-md-6 col-xs-12">
+                    <div class="thumbnail">
+                        <a href="../Images/@Html.DisplayFor(modelItem => item.Logo)" class="thumbnail" data-lightbox="enterprises" data-title="@Html.DisplayFor(modelItem => item.Name)"><img src="../Images/@Html.DisplayFor(modelItem => item.Logo)" alt="@Html.DisplayFor(modelItem => item.Name)"></a>
+                        <div class="caption">
+                            <h3><a href='@Url.Action("Details", new { id = item.EnterpriseID })'>@Html.DisplayFor(modelItem => item.Name)</a></h3>
+                            <p>@Html.DisplayFor(modelItem => item.URL)</p>
+                            <p>
+                                <small>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.EnterpriseID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.EnterpriseID })
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+            @*<div class="col-sm-12 col-md-12">
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.URL)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Logo)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.URL)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Logo)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.EnterpriseID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.EnterpriseID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.EnterpriseID })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>*@
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/lightbox_js")
+}

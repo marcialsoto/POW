@@ -1,0 +1,45 @@
+﻿@model UNFV.Portfolio.Models.Degree
+
+@{
+    ViewBag.Title = "Eliminar Grado";
+    ViewBag.Message = "Seguro de querer hacer esto?";
+
+}
+
+<div class="section" id="degrees">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 page-header">
+                <h4 class="heading">@ViewBag.Title</h4>
+                <p>@ViewBag.Message</p>
+            </div>
+            <div class="col-sm-12 col-md-12">
+                <div>
+                    <h4>Degree</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-default" /> |
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

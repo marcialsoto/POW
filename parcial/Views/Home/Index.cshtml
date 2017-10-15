@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Soy Marcial Soto,";
+    ViewBag.Hello = "Hola,";
+    ViewBag.Message = "Soy Marcial Soto";
+    ViewBag.MessagePosition = "Front-End Developer y Comunicador";
+
+}
+
+@section Styles {
+    @Styles.Render("~/Content/owl_css")
+}
+
+<div class="section" id="home">
+    <div class="owl-carousel">
+        <div class="item owl-lazy owl-bg-img full-screen" data-src="/Images/acerca-de.jpg" draggable="true" style="opacity: 1; height:100vh;">
+            <div class="container-fluid">
+                <div class="slide-content">
+                    <div class="slide-title">
+                        <h1><span>@ViewBag.Hello</span><br />@ViewBag.Message</h1>
+                    </div>
+                    <div class="slide-body">
+                        <p>@ViewBag.MessagePosition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item owl-lazy owl-bg-img full-screen" data-src="/Images/acerca-de.jpg" draggable="true" style="opacity: 1; height:100vh;">
+            <div class="container-fluid">
+                <div class="slide-content">
+                    <div class="slide-title">
+                        <h1><span>@ViewBag.Hello</span><br />@ViewBag.Message</h1>
+                    </div>
+                    <div class="slide-body">
+                        <p>@ViewBag.MessagePosition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/lazyload")
+    @Scripts.Render("~/bundles/owl_js")
+    @Scripts.Render("~/bundles/home_js")
+}

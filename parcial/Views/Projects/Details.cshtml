@@ -1,0 +1,81 @@
+﻿@model UNFV.Portfolio.Models.Project
+
+@{
+    ViewBag.Title = "Detalle de Proyecto";
+    ViewBag.Message = "Viendo un detalle de una Proyecto";
+
+}
+
+<div class="section" id="projects">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 page-header">
+                <h4 class="heading">@ViewBag.Title</h4>
+                <p>@ViewBag.Message</p>
+            </div>
+            <div class="col-sm-12 col-md-12">
+                <div>
+                    <h4>Project</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Enterprise.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Enterprise.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Skill.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Skill.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Thumbnail)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Thumbnail)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.URL)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.URL)
+                        </dd>
+
+                    </dl>
+                </div>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectID }) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
